@@ -4,8 +4,448 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="lab3.css" /> -->
+    <link rel="stylesheet" href="lab3.css" />
   </head>
+
   <body>
-    <h1>hi lalra</h1>
+    <div class="container">
+      <header class="header">
+        <img alt="spiderman" src="../realspiderman.png" width="150px" />
+        <div
+          style="
+            width: 348px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 150px;
+          "
+        >
+          <p
+            style="
+              color: #559bf6;
+              font-weight: 900;
+              font-family: sans-serif;
+              font-size: 48px;
+              display: flex;
+              justify-content: center;
+              margin-bottom: 5px;
+            "
+          >
+            [ thefacebook ]
+          </p>
+          <div style="display: flex; justify-content: space-between">
+            <p style="color: white; font-family: sans-serif">search</p>
+            <p style="color: white; font-family: sans-serif">global</p>
+            <p style="color: white; font-family: sans-serif">social net</p>
+            <p style="color: white; font-family: sans-serif">invite</p>
+            <p style="color: white; font-family: sans-serif">faq</p>
+            <p style="color: white; font-family: sans-serif">logout</p>
+          </div>
+        </div>
+        <!-- <table>
+          <thead style="color: white">
+            <tr>
+              <th class="simpletext" colspan="7">
+                <strong style="font-weight: 900; font-size: 30pxpx"
+                  >[ thefacebook ]</strong
+                >
+              </th>
+            </tr>
+            <tr>
+              <th
+                class="tabletext simpletext"
+                class="whiteText"
+                style="font-weight: 500"
+              >
+                home
+              </th>
+              <th class="tabletext simpletext">search</th>
+              <th class="tabletext simpletext">global</th>
+              <th class="tabletext simpletext">social net</th>
+              <th class="tabletext simpletext">invite</th>
+              <th class="tabletext simpletext">faq</th>
+              <th class="tabletext simpletext">logout</th>
+            </tr>
+          </thead>
+        </table> -->
+      </header>
+
+      <main class="main">
+        <section class="sidebar">
+          <div
+            style="
+              border: #1877f2 1px dashed;
+              padding: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 6px;
+            "
+          >
+            <form>
+              <input
+                type="search"
+                placeholder="search"
+                style="margin-bottom: 10px"
+              />
+              <div style="display: flex; gap: 30px" class="simpletext">
+                quick search
+                <button
+                  class="simpletext"
+                  style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    background: #1877f2;
+                    color: white;
+                  "
+                >
+                  go
+                </button>
+              </div>
+            </form>
+          </div>
+          <div style="border: #1877f2 1px dashed; padding: 18px">
+            <p class="simpletext" style="color: #1877f2">My Profile [ edit ]</p>
+            <p class="simpletext" style="color: #1877f2">My Friends</p>
+            <p class="simpletext" style="color: #1877f2">My Groups</p>
+            <p class="simpletext" style="color: #1877f2">My Parties</p>
+            <p class="simpletext" style="color: #1877f2">My Messages</p>
+            <p class="simpletext" style="color: #1877f2">My Account</p>
+            <p class="simpletext" style="color: #1877f2">My Privacy</p>
+          </div>
+          <div>
+            <img src="../friends.jpg" alt="friends photo" width="480px" />
+          </div>
+        </section>
+        <section class="rightside" style="border: #1877f2 solid 1px">
+          <div class="subheader">
+            <p>Brian Moore's Profile</p>
+            <p>Puget Sound</p>
+          </div>
+          <div class="content">
+            <div
+              class="leftcontents"
+              style="display: flex; flex-direction: column; gap: 20px"
+            >
+              <span class="component">
+                <div class="subheader">Picture</div>
+                <div style="padding: 5px">
+                  <img alt="profile" src="../lab4profile.jpg" width="100px" />
+                </div>
+              </span>
+              <span style="width: 300px; border: 1px solid #1877f2">
+                <p class="simpletext" style="padding: 5px">
+                  Send Brian a Message
+                </p>
+                <p
+                  class="simpletext"
+                  style="padding: 5px; border-top: #1877f2 solid 1px"
+                >
+                  Poke him!
+                </p>
+              </span>
+              <span class="component">
+                <div class="subheader">Connection</div>
+                <div style="padding: 5px">
+                  <p class="simpletext">You're in relationship with Luna.</p>
+                </div>
+              </span>
+              <span class="component">
+                <div class="subheader">Mutual Friends</div>
+                <div style="padding: 5px">
+                  <p class="simpletext">
+                    You have <a style="color: #1877f2">19 friends </a>in common
+                    with Brian.
+                  </p>
+                </div>
+              </span>
+              <span class="component">
+                <div class="subheader">Access</div>
+                <div style="padding: 5px">
+                  <p class="simpletext">
+                    Brian is currently logged in from a non-residential
+                    location.
+                  </p>
+                </div>
+              </span>
+              <span class="component">
+                <div class="subheader">Friends at Puget Sound</div>
+                <div
+                  style="
+                    padding: 10px;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    column-gap: 20px;
+                    row-gap: 20px;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                    "
+                  >
+                    <img alt="girl photo" src="../girl6.jpg" width="60px" />
+                    <p class="simpletext" style="margin-top: 5px">Jinx</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                    "
+                  >
+                    <img alt="girl photo" src="../girl11.jpg" width="60px" />
+                    <p class="simpletext" style="margin-top: 5px">Hisha</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                    "
+                  >
+                    <img alt="girl photo" src="../girl3.jpg" width="60px" />
+                    <p class="simpletext" style="margin-top: 5px">Bode</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                    "
+                  >
+                    <img alt="girl photo" src="../girl4.jpg" width="60px" />
+                    <p class="simpletext" style="margin-top: 5px">John</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                    "
+                  >
+                    <img alt="girl photo" src="../girl5.jpg" width="60px" />
+                    <p class="simpletext" style="margin-top: 5px">Tylor</p>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div class="rightside">
+              <span class="subheader">Information</span>
+              <div
+                style="
+                  width: 100%;
+                  border: #1877f2 solid 1px;
+                  padding-top: 20px;
+                  padding-bottom: 20px;
+                "
+              >
+                <table>
+                  <thead>
+                    <tr>
+                      <th
+                        style="
+                          font-weight: 900;
+                          font-family: sans-serif;
+                          font-size: 15px;
+                          text-align: left;
+                          padding-left: 20px;
+                        "
+                      >
+                        Account Info
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Name:</th>
+                      <th class="tabletext simpletext">Brian Moore</th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Member Since:</th>
+                      <th class="tabletext simpletext">May 21, 2005</th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Last Update:</th>
+                      <th class="tabletext simpletext">July 19, 2005</th>
+                    </tr>
+                    <tr>
+                      <th
+                        style="
+                          font-weight: 900;
+                          font-family: sans-serif;
+                          font-size: 15px;
+                          text-align: left;
+                          padding-left: 20px;
+                        "
+                      >
+                        Basic Info
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">School:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        NUM
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Status:</th>
+                      <th class="tabletext simpletext">Student</th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Sex:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Male
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Residence:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Todd 311
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Birthday:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        July 19, 2005
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Home Town:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Delhiin haa negtee
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">High School:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Bugd tugsdog surguuli
+                      </th>
+                    </tr>
+                    <tr>
+                      <th
+                        style="
+                          font-weight: 900;
+                          font-family: sans-serif;
+                          font-size: 15px;
+                          text-align: left;
+                          padding-left: 20px;
+                        "
+                      >
+                        Contact Info
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Email:</th>
+                      <th class="tabletext simpletext">Baagii997@gmail.com</th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Screenname:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Baagii
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Mobile:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        99998888
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Website:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        www.facebook/brian.com
+                      </th>
+                    </tr>
+                    <tr>
+                      <th
+                        style="
+                          font-weight: 900;
+                          font-family: sans-serif;
+                          font-size: 15px;
+                          text-align: left;
+                          padding-left: 20px;
+                        "
+                      >
+                        Personal Info
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Looking For:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Friendship
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Interested In:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Women
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Relationship Status:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Single
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Political Views:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Very Liberal
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Interests:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Shorthand property to set values for the thickness of
+                        the padding area. If left is omitted, it is the same as
+                        right. If bottom is omitted it is the same as top, if
+                        right is omitted it is the same as top. The value may
+                        not be negative.
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Favorite Music:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Shorthand property to set values for the thickness of
+                        the padding area. If left is omitted, it is the same as
+                        right. If bottom is omitted it is the same as top, if
+                        right is omitted it is the same as top. The value may
+                        not be negative.
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">Favorite Movies:</th>
+                      <th class="tabletext simpletext" style="color: #1877f2">
+                        Shorthand property to set values for the thickness of
+                        the padding area. If left is omitted, it is the same as
+                        right. If bottom is omitted it is the same as top, if
+                        right is omitted it is the same as top. The value may
+                        not be negative.
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="tabletext simpletext">About Me:</th>
+                      <th class="tabletext simpletext">
+                        Shorthand property to set values for the thickness of
+                        the padding area. If left is omitted, it is the same as
+                        right. If bottom is omitted it is the same as top, if
+                        right is omitted it is the same as top. The value may
+                        not be negative.
+                      </th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
