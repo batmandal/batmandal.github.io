@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Lato", sans-serif;
+  background-color: black;
 }
 .content {
   height: 100vh;
@@ -33,7 +34,8 @@ header {
 .last_section {
   background-color: white;
   width: 100%;
-  height: 498px;
+  /* height: 498px; */
+  height: 570px;
   display: flex;
   gap: 20px;
   padding-top: 20px;
@@ -61,7 +63,7 @@ footer {
   width: fit-content;
 }
 .right_top {
-  width: 250px;
+  width: 100%;
   background-color: #f61067;
   color: white;
   padding: 5px;
@@ -71,6 +73,7 @@ footer {
   height: 24px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 .title {
   color: white;
@@ -87,12 +90,14 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 505px;
+  width: 550px;
 }
 .right {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
+  padding-right: 10px;
 }
 .line {
   width: 100%;
@@ -100,7 +105,7 @@ footer {
   background-color: gray;
 }
 .video {
-  width: 505px;
+  width: 550px;
 }
 .alert {
   background-color: #9090a5;
@@ -111,6 +116,7 @@ footer {
   align-items: center;
   padding: 0px 10px;
   font-size: 11px;
+  gap: 10px;
 }
 .information {
   font-size: 11px;
@@ -121,7 +127,7 @@ footer {
   font-weight: 400;
 }
 .r-m-first {
-  width: 250px;
+  width: 100%;
   background-color: #9090a5;
   font-weight: 500;
   font-size: 11px;
@@ -132,7 +138,7 @@ footer {
   width: 100%;
 }
 .r-m-second {
-  width: 250px;
+  width: 100%;
   padding: 10px;
   background-color: #13124f;
   display: flex;
@@ -155,7 +161,7 @@ footer {
 }
 .r-m-third {
   background-color: #352ba5;
-  width: 250px;
+  width: 100%;
   color: white;
   font-size: 8px;
   font-weight: 400;
@@ -167,7 +173,7 @@ footer {
 .right_bottom {
   padding: 10px;
   border: solid 1px gray;
-  width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -218,4 +224,14 @@ footer {
 }
 .logo {
   width: 70px;
+}
+.message_count {
+  width: 12px;
+  height: 12px;
+  background-color: #352ba5;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
