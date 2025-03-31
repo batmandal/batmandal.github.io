@@ -1,2 +1,168 @@
 @charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.header-texts {
+  display: flex;
+  gap: 30px;
+}
+.offcanvas {
+  display: flex;
+}
+.button {
+  border: 1px black solid;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+header {
+  /* background-color: #f7f7f7; */
+  padding: 0px 100px;
+}
+.navbar {
+  background-color: blue;
+}
+.my-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  height: 90px;
+}
+
+.logo {
+  object-fit: cover;
+  width: 150px;
+}
+.icons {
+  display: flex;
+}
+.info-email {
+  display: none;
+}
+ul {
+  list-style-type: none;
+}
+.first-section {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  font-size: 70px;
+  width: 800px;
+
+  text-align: center;
+}
+.sub-title {
+  text-align: center;
+}
+.section-with-button {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.big-photo {
+  width: 100vw;
+}
+body {
+  background-color: #f7f7f7;
+  padding-top: 25px;
+  position: relative;
+}
+.second-section {
+  display: flex;
+  width: 100vw;
+  padding: 0px 100px;
+  position: absolute;
+  top: 880px;
+}
+.second-section-container {
+  background-color: white;
+  padding: 150px 90px 0px 90px;
+  border-radius: 10px;
+}
+.second-section-title {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom-title {
+  font-size: 30px;
+  width: 500px;
+  text-align: center;
+}
+.content-wrapper {
+  position: relative;
+}
+.section-with-support {
+  background-color: blue;
+  display: flex;
+  gap: 20px;
+  padding: 0px 20px;
+}
+.comp-top {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+.comp-top-text {
+  text-align: center;
+}
+.stragety-section {
+  display: flex;
+}
+.stragety-section-comp {
+  width: 50%;
+}
+.line {
+  border: solid 3px red;
+  margin: 90px 0px;
+}
+.company-section {
+  background-color: pink;
+  display: flex;
+}
+.numbers {
+  display: flex;
+}
+.big-card {
+  background-color: blueviolet;
+}
+.child-big-card {
+  display: flex;
+}
+.case-title {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+.case-title-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sub-swiper-section {
+  display: flex;
+}
+.figcaption-read-more {
+  display: none;
+}
+.swiper-card-container {
+  overflow: hidden;
+  border-radius: 18px;
+}
+footer {
+  width: 100vw;
+  background-color: palegreen;
 }
