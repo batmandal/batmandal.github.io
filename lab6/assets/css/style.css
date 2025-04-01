@@ -11,11 +11,14 @@
   display: flex;
 }
 .button {
-  border: 1px black solid;
+  border: 1px #343f50 solid;
   padding: 12px 20px;
   border-radius: 25px;
-  color: black;
+  color: #343f50;
   font-size: 20px;
+}
+.button:hover {
+  cursor: pointer;
 }
 a {
   text-decoration: none;
@@ -23,12 +26,9 @@ a {
   font-size: large;
 }
 header {
-  /* background-color: #f7f7f7; */
   padding: 0px 100px;
 }
-.navbar {
-  background-color: blue;
-}
+
 .my-header {
   display: flex;
   justify-content: space-between;
@@ -60,6 +60,7 @@ ul {
   width: 800px;
   margin-bottom: 30px;
   text-align: center;
+  color: #343f50;
 }
 .sub-title {
   text-align: center;
@@ -75,6 +76,13 @@ ul {
 .big-photo {
   width: 100vw;
 }
+/* ------------------------------------------->>>>>>>>>>>>> */
+
+.big-photo-container {
+  margin-bottom: 4260px;
+}
+
+/* ------------------------------------------->>>>>>>>>>>>> */
 body {
   background-color: #f7f7f7;
   padding-top: 25px;
@@ -98,24 +106,34 @@ body {
   align-items: center;
 }
 .bottom-title {
-  font-size: 35px;
-  width: 500px;
+  width: 700px;
   text-align: center;
-  font-weight: 400;
+
   margin-bottom: 30px;
 }
 .content-wrapper {
   position: relative;
 }
 .section-with-support {
-  background-color: blue;
   display: flex;
-  gap: 20px;
-  padding: 0px 20px;
+  justify-content: space-between;
   margin-bottom: 100px;
 }
+.section-with-support-comp {
+  width: 350px;
+}
+.section-with-support h4 {
+  width: 300px;
+  color: #343f50;
+  font-size: 20px;
+  text-align: center;
+}
+.section-with-support p {
+  width: 300px;
+  color: #343f50;
+  font-size: 18px;
+}
 .comp-top {
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -127,14 +145,15 @@ body {
 }
 .stragety-section {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 .stragety-section-comp {
   width: 50%;
 }
 .line {
-  border: solid 3px red;
-  margin: 90px 0px;
+  /* border: solid 3px red; */
+  border: solid 1px #dbdbdb;
+  margin: 100px 0px;
 }
 .company-section {
   display: flex;
@@ -149,18 +168,20 @@ body {
 }
 .number {
   font-size: 40px;
+  color: #343f50;
 }
 .number-bottom-text {
   color: #9c9c9c;
 }
 .big-card {
-  background-color: blueviolet;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .child-big-card {
   display: flex;
 }
 .case-title {
-  background-color: red;
   display: flex;
   justify-content: center;
 }
@@ -171,6 +192,7 @@ body {
 }
 .sub-swiper-section {
   display: flex;
+  gap: 25px;
 }
 .figcaption-read-more {
   display: none;
@@ -178,13 +200,83 @@ body {
 .swiper-card-container {
   overflow: hidden;
   border-radius: 18px;
+  margin-bottom: 10px;
 }
 footer {
-  width: 100vw;
-  background-color: palegreen;
+  width: 100%;
+  color: white;
+  background-color: #343f50;
+  padding: 200px 100px 20px 100px;
 }
 .next-section-sub-title {
   margin-bottom: 15px;
   font-weight: 200;
   color: #9c9c9c;
+}
+.big-title {
+  font-size: 40px;
+  color: #343f50;
+}
+.post-header {
+  margin-bottom: 10px;
+}
+.post-meta {
+  display: flex;
+  color: #9c9c9c;
+  gap: 15px;
+}
+.post-comments {
+  color: #9c9c9c;
+}
+.small-text {
+  color: #343f50;
+  font-size: 20px;
+}
+.color-white {
+  color: #dcdcdc;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+li {
+  list-style-type: none;
+  list-style: none;
+}
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.df {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+  color: #343f50;
+  font-size: 18px;
+}
+
+button {
+  font-size: 18px;
+  border: none;
+  background-color: none;
+  background: none;
+  gap: 20px;
+  display: flex;
+  font-weight: 600;
+  color: #343f50;
 }
