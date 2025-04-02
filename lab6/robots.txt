@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://batmandal.github.io/lab6/sitemap.xml
