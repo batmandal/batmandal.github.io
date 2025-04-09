@@ -472,11 +472,24 @@ button {
   width: 150px;
   color: #dcdcdc;
 }
+.idk-17 {
+  display: flex;
+}
 .colorwhite {
   color: white;
 }
 .color-dc {
   color: #dcdcdc;
+}
+.menu-img {
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+.menu-img-img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
 }
 @media only screen and (max-width: 600px) {
   header {
@@ -565,7 +578,7 @@ button {
   }
   .line {
     border: solid 1px #dbdbdb;
-    margin: 50px 0px;
+    margin: 30px 0px;
   }
   .company-section {
     display: block;
@@ -671,7 +684,7 @@ button {
   .last-section-text {
     width: 100%px;
     color: #343f50;
-    margin-top: 100px;
+    margin-top: 10px;
   }
 
   .last-section-button {
@@ -682,7 +695,7 @@ button {
     background-color: #343f50;
   }
   .big-photo-container {
-    margin-bottom: 5200px;
+    margin-bottom: 4780px;
     bottom: 0;
     left: 0;
     z-index: 2;
@@ -691,7 +704,7 @@ button {
     width: 100%;
     color: white;
     background-color: #343f50;
-    padding: 200px 100px 20px 100px;
+    padding: 80px 100px 40px 100px;
   }
   .footer-df {
     display: block;
@@ -754,7 +767,7 @@ button {
     gap: 10px;
   }
   .LAST-IMAGE {
-    margin-bottom: 300px;
+    margin-bottom: 100px;
   }
   .idk-13 {
     margin: 20px 0px;
@@ -763,9 +776,30 @@ button {
     color: #dcdcdc;
   }
   .idk-16 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .idk-17 {
+    display: none;
   }
   .idk-4 {
     width: auto;
+  }
+  .any-text {
+    color: #717171;
+  }
+  .menu-img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    right: 30px;
+    top: 30px;
+
+    position: absolute;
+  }
+  .menu-img-img {
+    width: 40px;
+    height: auto;
+    object-fit: cover;
   }
 }
