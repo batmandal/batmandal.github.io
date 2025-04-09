@@ -625,6 +625,7 @@ button {
   }
   .sub-swiper-section {
     display: block;
+    padding: 0 20px;
   }
   .swiper-slide {
     margin-bottom: 20px;
@@ -665,12 +666,14 @@ button {
   }
   .why-choose-text {
     width: 100%;
+    padding: 0px 10px;
   }
   .last-section-text {
     width: 100%px;
     color: #343f50;
-    margin-top: 10px;
+    margin-top: 100px;
   }
+
   .last-section-button {
     width: fit-content;
     margin: 20px 0px;
@@ -679,7 +682,7 @@ button {
     background-color: #343f50;
   }
   .big-photo-container {
-    margin-bottom: 4900px;
+    margin-bottom: 5200px;
     bottom: 0;
     left: 0;
     z-index: 2;
@@ -749,5 +752,20 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .LAST-IMAGE {
+    margin-bottom: 300px;
+  }
+  .idk-13 {
+    margin: 20px 0px;
+    font-size: 16px;
+    width: auto;
+    color: #dcdcdc;
+  }
+  .idk-16 {
+    margin-bottom: 10px;
+  }
+  .idk-4 {
+    width: auto;
   }
 }
