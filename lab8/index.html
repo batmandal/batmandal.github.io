@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ene bol Lab - 8</h1>
+    <p>dasgal 1</p>
+    <p id="ner"></p>
+    <p id="res"></p>
+
+    <p style="margin-top: 30px">dasgal 2</p>
+    <input id="input" type="number" />
+    <button onclick="sNumbers()">tsipr niilber harah</button>
+    <p id="numberS"></p>
+
+    <p style="margin-top: 30px">dasgal 3</p>
+    <input id="input3" type="number" />
+    <button onclick="primeDecompose()">prime niilberig olyo</button>
+    <p id="res3"></p>
+
+    <p style="margin-top: 30px">dasgal 4</p>
+    <input id="input4" type="number" />
+    <button onclick="azguiTuulai()">tuulainii uheh hugatsag ol</button>
+    <p id="res4"></p>
+
+    <p style="margin-top: 30px">dasgal 5</p>
+    <p>array oruul</p>
+    <input id="input5" type="text" />
+    <button onclick="evenAndOdd()">tegsh sondgoi too harah</button>
+    <div id="res5">
+      <p id="res5-odd"></p>
+      <p id="res5-even"></p>
+    </div>
+
+    <p style="margin-top: 30px">dasgal 6</p>
+    <input id="input6" type="text" />
+    <button onclick="findSomeonesHome()">ailig olyo</button>
+    <div style="display: flex; gap: 20px" id="res6">
+      <p id="res6-orts"></p>
+      <p id="res6-davhar"></p>
+      <p id="res6-ail"></p>
+    </div>
+
+    <p style="margin-top: 30px">dasgal 7</p>
+    <p>
+      5 aas 11n tsagiin hoorond orhod nogon durvoljin durs zuun tald, 12 oos 4
+      tsagiin hoorond orhod ulaan durvoljin durs barun tald haragdana
+    </p>
+    <p id="das7"></p>
+    <div
+      style="
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 100px;
+        width: 100%;
+        border: solid, 1px, black;
+        position: relative;
+      "
+      id="container"
+    ></div>
+
+    <p style="margin-top: 30px">dasgal 8</p>
+    <input id="input8" type="number" />
+    <button onclick="winningStart1()">petyagin ehni avah zoosiin too</button>
+    <p id="res8"></p>
+  </body>
+
+  <script>
+    var name = prompt("neree oruul");
+    document.getElementById("ner").innerText = `Tanii oruulsan ner : ${name}`;
+
+    function isPalindrome(str) {
+      str = str.toLowerCase();
+      let arr = str.split("");
+      let len = Math.floor(arr.length / 2);
+      let i = 0;
+
+      while (i < len) {
+        let c = i + 1;
+        if (arr[i] !== arr[arr.length - c]) {
+          document.getElementById("res").innerText = "palindrome bish";
+          return;
+        }
+        i += 1;
+      }
+      document.getElementById("res").innerText = "palindrome mun";
+    }
+    isPalindrome(name);
+
+    const sNumbers = () => {
+      let numbers = document.getElementById("input").value;
+      let s = 0;
+      while (numbers > 0) {
+        s += numbers % 10;
+        numbers = Math.floor(numbers / 10);
+      }
+      document.getElementById("numberS").innerText = `tsipr niilber: ${s}`;
+    };
+
+    // function isPrime(n) {
+    //   if (n <= 1) return false;
+    //   if (n === 2) return true;
+    //   if (n % 2 === 0) return false;
+    //   for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    //     if (n % i === 0) return false;
+    //   }
+    //   return true;
+    // }
+
+    // function primeDecompose() {
+    //   const num = document.getElementById("input3").value;
+    //   for (let i = num - 1; i >= 2; i--) {
+    //     if (isPrime(i)) {
+    //       let remainder = num - i;
+    //       if (isPrime(remainder)) {
+    //         document.getElementById("res3").innerText = ` ${i} + ${remainder}`;
+    //         return;
+    //       }
+    //     }
+    //   }
+    //   document.getElementById(
+    //     "res3"
+    //   ).innerText = `${num} анхны хоёр тооны нийлбэрт задарч болохгүй`;
+    //   isPrime(num);
+    // }
+
+    function isPrime(n) {
+      if (n < 2) return false;
+      if (n === 2) return true;
+      if (n % 2 === 0) return false;
+      for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+
+    function primeDecompose() {
+      let num = parseInt(document.getElementById("input3").value);
+      const original = num;
+      const result = [];
+
+      while (num > 0) {
+        let found = false;
+        for (let i = num; i >= 2; i--) {
+          if (isPrime(i) && i <= num) {
+            result.push(i);
+            num -= i;
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          result.push(1);
+          break;
+        }
+      }
+
+      document.getElementById("res3").innerText = `${original} = ${result.join(
+        " + "
+      )}`;
+    }
+
+    const azguiTuulai = () => {
+      let distance = document.getElementById("input4").value;
+      distance = distance * 1000;
+      let wolf = (25 * 1000) / 3600;
+      let rabbit = (18 * 1000) / 3600;
+      let hurdzoruu = wolf - rabbit;
+      let result4 = distance / hurdzoruu;
+      let minutes = Math.floor(result4 / 60);
+      let seconds = Math.round(result4 % 60);
+
+      document.getElementById(
+        "res4"
+      ).innerText = `azgui tuulai barigdah hugatsa ${minutes} minut, ${seconds} seconds `;
+    };
+
+    const evenAndOdd = () => {
+      let inputStr = document.getElementById("input5").value;
+      let arr = inputStr.split(",");
+      let even = [];
+      let odd = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+          even.push(arr[i]);
+        } else {
+          odd.push(arr[i]);
+        }
+      }
+      document.getElementById("res5-odd").innerText = `sondgoi : ${odd}`;
+      document.getElementById("res5-even").innerText = `tegsh : ${even}`;
+    };
+
+    const findSomeonesHome = () => {
+      let ail = document.getElementById("input6").value;
+      if (ail >= 1 && ail <= 108) {
+        let i = 1;
+        let o = 1;
+        let d = 1;
+
+        while (i < ail) {
+          if (i % 4 == 0) {
+            d += 1;
+          }
+          if (i % 36 == 0) {
+            o += 1;
+            d = 1;
+          }
+
+          i += 1;
+        }
+
+        let heddehEseh = i % 4;
+        if (i % 4 == 0) {
+          heddehEseh = 4;
+        }
+        document.getElementById("res6-orts").innerText = `${o}-r ortsnii`;
+        document.getElementById("res6-davhar").innerText = `${d}-r davhariin`;
+        document.getElementById("res6-ail").innerText = `${heddehEseh}-r ail`;
+        return;
+      } else {
+        document.getElementById(
+          "res6"
+        ).innerText = `manai bairand ${ail} toottoi ail baihgui `;
+        return;
+      }
+    };
+
+    let current = new Date();
+    let currentTime = current.getHours();
+    let newDiv = document.createElement("div");
+    newDiv.innerText = `${currentTime}`;
+    newDiv.style.display = "flex";
+    newDiv.style.alignItems = "center";
+    newDiv.style.justifyContent = "center";
+    newDiv.style.width = "100px";
+    newDiv.style.height = "100px";
+    newDiv.style.backgroundColor = "lightblue";
+    newDiv.style.position = "absolute";
+    if (currentTime >= 5 && currentTime <= 12) {
+      newDiv.style.left = "0px";
+      newDiv.style.backgroundColor = "lightblue";
+    } else {
+      newDiv.style.right = "0px";
+      newDiv.style.backgroundColor = "red";
+    }
+
+    document.getElementById("container").appendChild(newDiv);
+
+    const winningStart1 = () => {
+      let coin = document.getElementById("input8").value;
+      function winningStart(n) {
+        for (let k = 1; k <= n; k++) {
+          let coins = n - k;
+          let prev = k;
+          let isPetyaWin = true;
+
+          while (coins > 0) {
+            let opponent = Math.min(prev + 1, coins);
+            coins -= opponent;
+            prev = opponent;
+
+            if (coins <= 0) {
+              break;
+            }
+
+            let petya = Math.min(prev + 1, coins);
+            coins -= petya;
+            prev = petya;
+
+            if (coins <= 0) {
+              isPetyaWin = false;
+              break;
+            }
+          }
+
+          if (isPetyaWin)
+            return (document.getElementById("res8").innerText = `${k}`);
+        }
+
+        return (document.getElementById("res8").innerText = `${0}`);
+      }
+      winningStart(coin);
+    };
+  </script>
+</html>
