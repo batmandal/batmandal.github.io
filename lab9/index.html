@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Currency Converter</title>
+    <style>
+      :root {
+        --primary: #6200ee;
+        --primary-variant: #3700b3;
+        --secondary: #03dac6;
+        --secondary-variant: #018786;
+        --background: #f0f0f3;
+        --surface: #ffffff;
+        --on-primary: #ffffff;
+        --on-secondary: #000000;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: var(--background);
+        margin: 0;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .calculator {
+        background: var(--surface);
+        padding: 40px 30px;
+        border-radius: 25px;
+        box-shadow: 10px 10px 30px #d1d9e6, -10px -10px 30px #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      input#amountInput {
+        width: 100%;
+        font-size: 28px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: right;
+        border: none;
+        border-radius: 15px;
+        background: #f0f0f3;
+        box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
+        outline: none;
+      }
+
+      .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+        width: 100%;
+        justify-items: center;
+      }
+
+      .keypad button {
+        background: var(--primary);
+        color: var(--on-primary);
+        font-size: 24px;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        box-shadow: 0 8px #3700b3;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .keypad button:hover {
+        background: var(--primary-variant);
+      }
+
+      .keypad button:active {
+        transform: translateY(5px);
+        box-shadow: 0 2px #3700b3;
+      }
+
+      select {
+        margin: 10px;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 12px;
+        border: 2px solid var(--secondary);
+        background: var(--surface);
+        box-shadow: 3px 3px 10px #d1d9e6, -3px -3px 10px #ffffff;
+        outline: none;
+      }
+
+      .convert-btn {
+        background: var(--secondary);
+        color: var(--on-secondary);
+        border: none;
+        padding: 15px 50px;
+        border-radius: 30px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        box-shadow: 0 8px #018786;
+        transition: all 0.3s ease;
+      }
+
+      .convert-btn:hover {
+        background: var(--secondary-variant);
+      }
+
+      .convert-btn:active {
+        transform: translateY(5px);
+        box-shadow: 0 2px #018786;
+      }
+
+      #result {
+        margin-top: 30px;
+        font-size: 24px;
+        color: var(--primary-variant);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="calculator">
+      <h1>Currency Converter</h1>
+
+      <input type="text" id="amountInput" readonly />
+
+      <div class="keypad">
+        <button onclick="appendNumber(1)">1</button>
+        <button onclick="appendNumber(2)">2</button>
+        <button onclick="appendNumber(3)">3</button>
+        <button onclick="appendNumber(4)">4</button>
+        <button onclick="appendNumber(5)">5</button>
+        <button onclick="appendNumber(6)">6</button>
+        <button onclick="appendNumber(7)">7</button>
+        <button onclick="appendNumber(8)">8</button>
+        <button onclick="appendNumber(9)">9</button>
+        <button onclick="appendNumber(0)">0</button>
+        <button onclick="clearInput()">C</button>
+      </div>
+
+      <div>
+        <label
+          >From:
+          <select id="fromCurrency"></select>
+        </label>
+
+        <label
+          >To:
+          <select id="toCurrency"></select>
+        </label>
+      </div>
+
+      <button class="convert-btn" onclick="convertCurrency()">Convert</button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const exchangeArray = [
+        { name: "USD", value: 1 },
+        { name: "EUR", value: 0.88 },
+        { name: "POUND", value: 0.75 },
+        { name: "WON", value: 1433 },
+        { name: "YEN", value: 142 },
+        { name: "YAN", value: 7.31 },
+        { name: "MNT", value: 3537 },
+      ];
+
+      const fromCurrency = document.getElementById("fromCurrency");
+      const toCurrency = document.getElementById("toCurrency");
+
+      exchangeArray.forEach((currency) => {
+        const option1 = document.createElement("option");
+        option1.value = currency.name;
+        option1.textContent = currency.name;
+        fromCurrency.appendChild(option1);
+
+        const option2 = document.createElement("option");
+        option2.value = currency.name;
+        option2.textContent = currency.name;
+        toCurrency.appendChild(option2);
+      });
+
+      function appendNumber(num) {
+        const amountInput = document.getElementById("amountInput");
+        amountInput.value += num;
+      }
+
+      function clearInput() {
+        document.getElementById("amountInput").value = "";
+        document.getElementById("result").textContent = "";
+      }
+
+      function convertCurrency() {
+        const amountInput = document.getElementById("amountInput").value;
+        if (!amountInput) {
+          alert("Please enter a number!");
+          return;
+        }
+
+        const amount = parseFloat(amountInput);
+        const from = document.getElementById("fromCurrency").value;
+        const to = document.getElementById("toCurrency").value;
+
+        const fromValue = exchangeArray.find((c) => c.name === from).value;
+        const toValue = exchangeArray.find((c) => c.name === to).value;
+
+        const convertedAmount = (amount / fromValue) * toValue;
+        document.getElementById(
+          "result"
+        ).textContent = `${amount} ${from} = ${convertedAmount.toFixed(
+          2
+        )} ${to}`;
+      }
+    </script>
+  </body>
+</html>
