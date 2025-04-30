@@ -73,9 +73,11 @@
       function appendNumber(num) {
         const amountInput = document.getElementById("amountInput");
 
-        if (num == "." && amountInput.value.includes(".")) {
-          return;
-        }
+        if (num === "." && currentValue.includes(".")) return;
+
+        if (num === "." && currentValue === "") return;
+
+        if (currentValue === "0" && num !== ".") return;
         amountInput.value += num;
       }
 
