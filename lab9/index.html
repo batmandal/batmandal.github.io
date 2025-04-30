@@ -72,13 +72,27 @@
 
       function appendNumber(num) {
         const amountInput = document.getElementById("amountInput");
+        const currentValue = amountInput.value;
 
-        if (num === "." && currentValue.includes(".")) return;
+        if (num === ".") {
+          if (currentValue.includes(".")) return;
+          if (currentValue === "") {
+            amountInput.value = "0.";
+            return;
+          }
+        }
 
-        if (num === "." && currentValue === "") return;
+        // prevent leading 0s like 0000
+        if (num === "0") {
+          if (currentValue === "0") return;
+        }
 
-        if (currentValue === "0" && num !== ".") return;
-        amountInput.value += num;
+        // if current is 0 and user presses non-dot, replace it
+        if (currentValue === "0" && num !== ".") {
+          amountInput.value = num;
+        } else {
+          amountInput.value += num;
+        }
       }
 
       function clearInput() {
