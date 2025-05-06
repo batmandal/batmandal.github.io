@@ -76,10 +76,6 @@ input#amountInput {
   justify-content: center;
 }
 
-/* .keypad button:hover {
-  background: var(--primary-variant);
-} */
-
 .keypad button:active {
   transform: translateY(5px);
   box-shadow: 0 2px #3700b3;

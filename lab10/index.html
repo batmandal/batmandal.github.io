@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дүүжилж алъя</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="nickname-container">
+      <h1>Нэрээ оруулна уу</h1>
+      <input type="text" id="nickname-input" placeholder="Нэр..." />
+      <button id="start-btn">Эхлэх</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+      <h2>Тоглогч: <span id="player-name"></span></h2>
+      <canvas id="hangman-canvas" width="200" height="200"></canvas>
+      <div id="word-display"></div>
+      <div id="keyboard"></div>
+      <div id="timer">Үлдсэн хугацаа: <span id="time-left">60</span> сек</div>
+      <div id="score">Оноо: <span id="score-value">0</span></div>
+    </div>
+
+    <div id="game-over" class="hidden">
+      <h2>Та хожигдлоо!</h2>
+      <button id="restart-btn">Дахин эхлэх</button>
+    </div>
+
+    <div id="scoreboard" class="hidden">
+      <h2>TOP 10</h2>
+      <ol id="score-list"></ol>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

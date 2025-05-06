@@ -1,0 +1,65 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+.hidden {
+  display: none;
+}
+/* #keyboard button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+} */
+#word-display span {
+  display: inline-block;
+  border-bottom: 2px solid black;
+  width: 20px;
+  margin: 5px;
+  font-size: 20px;
+}
+
+#keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+#keyboard button {
+  background: var(--primary, #6200ea);
+  color: var(--on-primary, #fff);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  box-shadow: 0 8px #3700b3;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#keyboard button:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px #3700b3;
+}
+
+#keyboard button.guessed {
+  background-color: lightgray;
+  color: white;
+  cursor: default;
+  box-shadow: none;
+}
+#keyboard button:disabled {
+  background-color: #bbb;
+  color: white;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
