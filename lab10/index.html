@@ -13,10 +13,21 @@
       <button id="start-btn">Эхлэх</button>
     </div>
 
-    <div id="game-container" class="hidden">
+    <div id="game-container" class="hidden" style="position: relative">
       <h2>Тоглогч: <span id="player-name"></span></h2>
-      <canvas id="hangman-canvas" width="200" height="200"></canvas>
-      <div id="word-display"></div>
+      <canvas
+        id="hangman-canvas"
+        width="200"
+        height="200"
+        style="margin-top: 95px"
+      ></canvas>
+      <img
+        src="/gallowbg.png"
+        width="300px"
+        height="300px"
+        style="position: absolute; z-index: 2; left: 46%"
+      />
+      <div id="word-display" style="margin-top: 150px"></div>
       <div id="keyboard"></div>
       <div id="timer">Үлдсэн хугацаа: <span id="time-left">60</span> сек</div>
       <div id="score">Оноо: <span id="score-value">0</span></div>

@@ -117,7 +117,21 @@ function startGame() {
   });
 }
 
+// function nextWord() {
+//   currentWord = pickRandomWord();
+//   guessedLetters = [];
+//   wrongGuessCount = 0;
+//   drawHangman();
+//   displayWord();
+// }
+
 function nextWord() {
+  // Enable all letter buttons again
+  document.querySelectorAll("#keyboard button").forEach((btn) => {
+    btn.disabled = false;
+    btn.classList.remove("guessed-correct", "guessed-wrong");
+  });
+
   currentWord = pickRandomWord();
   guessedLetters = [];
   wrongGuessCount = 0;
