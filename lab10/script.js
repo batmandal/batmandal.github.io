@@ -55,7 +55,12 @@ function drawHangman() {
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  if (wrongGuessCount > 0) ctx.fillRect(80, 20, 40, 40); // Head
+  if (wrongGuessCount > 0) {
+    ctx.beginPath();
+    ctx.arc(100, 40, 20, 0, Math.PI * 2); // (x, y, radius, startAngle, endAngle)
+    ctx.stroke(); // хүрээтэй дугуй
+    ctx.fill(); // хэрвээ дотор нь дүүргэмээр байвал
+  }
   if (wrongGuessCount > 1) ctx.fillRect(95, 60, 10, 40); // Body
   if (wrongGuessCount > 2) ctx.fillRect(75, 60, 20, 10); // Left Arm
   if (wrongGuessCount > 3) ctx.fillRect(105, 60, 20, 10); // Right Arm
