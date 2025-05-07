@@ -38,7 +38,13 @@ function loadWords() {
 
 function pickRandomWord() {
   const index = Math.floor(Math.random() * words.length);
-  return words[index].toUpperCase();
+  const entry = words[index];
+  const question = Object.keys(entry)[0];
+  const answer = entry[question].toUpperCase(); // үгийг том үсгээр
+
+  document.getElementById("question").textContent = question; // HTML дээр асуулт харуулах
+
+  return answer;
 }
 
 function displayWord() {
@@ -72,13 +78,62 @@ function drawHangman() {
   }
 }
 
+// function createKeyboard() {
+//   keyboardDiv.innerHTML = "";
+//   for (let i = 65; i <= 90; i++) {
+//     const btn = document.createElement("button");
+//     btn.textContent = String.fromCharCode(i);
+//     btn.onclick = () => handleGuess(btn.textContent);
+//     keyboardDiv.appendChild(btn);
+//   }
+// }
+
 function createKeyboard() {
+  const mongolLetters = [
+    "А",
+    "Б",
+    "В",
+    "Г",
+    "Д",
+    "Е",
+    "Ё",
+    "Ж",
+    "З",
+    "И",
+    "Й",
+    "К",
+    "Л",
+    "М",
+    "Н",
+    "О",
+    "Ө",
+    "П",
+    "Р",
+    "С",
+    "Т",
+    "У",
+    "Ү",
+    "Ф",
+    "Х",
+    "Ц",
+    "Ч",
+    "Ш",
+    "Щ",
+    "Ъ",
+    "Ь",
+    "Ы",
+    "Э",
+    "Ю",
+    "Я",
+  ];
+
   keyboardDiv.innerHTML = "";
-  for (let i = 65; i <= 90; i++) {
+  for (let letter of mongolLetters) {
     const btn = document.createElement("button");
-    btn.textContent = String.fromCharCode(i);
-    btn.onclick = () => handleGuess(btn.textContent);
+    btn.textContent = letter;
+    btn.onclick = () => handleGuess(letter);
     keyboardDiv.appendChild(btn);
+    console.log("letter : ", letter);
   }
 }
 
