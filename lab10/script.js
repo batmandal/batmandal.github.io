@@ -40,9 +40,9 @@ function pickRandomWord() {
   const index = Math.floor(Math.random() * words.length);
   const entry = words[index];
   const question = Object.keys(entry)[0];
-  const answer = entry[question].toUpperCase(); // үгийг том үсгээр
+  const answer = entry[question].toUpperCase();
 
-  document.getElementById("question").textContent = question; // HTML дээр асуулт харуулах
+  document.getElementById("question").textContent = question;
 
   return answer;
 }
@@ -63,30 +63,20 @@ function drawHangman() {
 
   if (wrongGuessCount > 0) {
     ctx.beginPath();
-    ctx.arc(100, 40, 20, 0, Math.PI * 2); // (x, y, radius, startAngle, endAngle)
-    ctx.stroke(); // хүрээтэй дугуй
-    ctx.fill(); // хэрвээ дотор нь дүүргэмээр байвал
+    ctx.arc(100, 40, 20, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fill();
   }
-  if (wrongGuessCount > 1) ctx.fillRect(95, 60, 10, 40); // Body
-  if (wrongGuessCount > 2) ctx.fillRect(75, 60, 20, 10); // Left Arm
-  if (wrongGuessCount > 3) ctx.fillRect(105, 60, 20, 10); // Right Arm
-  if (wrongGuessCount > 4) ctx.fillRect(85, 100, 10, 30); // Left Leg
-  if (wrongGuessCount > 5) ctx.fillRect(100, 100, 10, 30); // Right Leg
+  if (wrongGuessCount > 1) ctx.fillRect(95, 60, 10, 40);
+  if (wrongGuessCount > 2) ctx.fillRect(75, 60, 20, 10);
+  if (wrongGuessCount > 3) ctx.fillRect(105, 60, 20, 10);
+  if (wrongGuessCount > 4) ctx.fillRect(85, 100, 10, 30);
+  if (wrongGuessCount > 5) ctx.fillRect(100, 100, 10, 30);
 
   if (wrongGuessCount >= 6) {
     gameOver();
   }
 }
-
-// function createKeyboard() {
-//   keyboardDiv.innerHTML = "";
-//   for (let i = 65; i <= 90; i++) {
-//     const btn = document.createElement("button");
-//     btn.textContent = String.fromCharCode(i);
-//     btn.onclick = () => handleGuess(btn.textContent);
-//     keyboardDiv.appendChild(btn);
-//   }
-// }
 
 function createKeyboard() {
   const mongolLetters = [
@@ -133,24 +123,7 @@ function createKeyboard() {
     btn.textContent = letter;
     btn.onclick = () => handleGuess(letter);
     keyboardDiv.appendChild(btn);
-    console.log("letter : ", letter);
-  }
-}
-
-function handleGuess(letter) {
-  if (guessedLetters.includes(letter)) return;
-  guessedLetters.push(letter);
-
-  if (currentWord.includes(letter)) {
-    displayWord();
-    if (currentWord.split("").every((l) => guessedLetters.includes(l))) {
-      score++;
-      scoreValue.textContent = score;
-      setTimeout(() => nextWord(), 1000);
-    }
-  } else {
-    wrongGuessCount++;
-    drawHangman();
+    // console.log("letter : ", letter);
   }
 }
 
@@ -177,16 +150,7 @@ function startGame() {
   });
 }
 
-// function nextWord() {
-//   currentWord = pickRandomWord();
-//   guessedLetters = [];
-//   wrongGuessCount = 0;
-//   drawHangman();
-//   displayWord();
-// }
-
 function nextWord() {
-  // Enable all letter buttons again
   document.querySelectorAll("#keyboard button").forEach((btn) => {
     btn.disabled = false;
     btn.classList.remove("guessed-correct", "guessed-wrong");
@@ -222,6 +186,8 @@ function gameOver() {
   clearInterval(timer);
   gameContainer.classList.add("hidden");
   gameOverContainer.classList.remove("hidden");
+
+  endGame();
 }
 
 function showScoreboard(players) {
@@ -251,10 +217,16 @@ function handleGuess(letter) {
   });
 
   if (currentWord.includes(letter)) {
+    const letterCount = currentWord
+      .split("")
+      .filter((l) => l === letter).length;
+
+    score += letterCount;
+    scoreValue.textContent = score;
+
     displayWord();
+
     if (currentWord.split("").every((l) => guessedLetters.includes(l))) {
-      score++;
-      scoreValue.textContent = score;
       setTimeout(() => nextWord(), 1000);
     }
   } else {
